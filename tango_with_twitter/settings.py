@@ -1,7 +1,15 @@
 # Django settings for tango_with_twitter project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+
+# App Root path for all things in settings file
+
+SETTINGS_DIR = os.path.dirname(__file__)
+PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
+PROJECT_PATH = os.path.abspath(PROJECT_PATH)
+DATABASE_PATH = os.path.join(PROJECT_PATH, 'deals.db ')
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -11,15 +19,16 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': DATABASE_PATH,                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        # 'USER': '',
+        # 'PASSWORD': '',
+        # 'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        # 'PORT': '',                      # Set to empty string for default.
     }
 }
+
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -67,11 +76,14 @@ STATIC_ROOT = ''
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
+STATIC_PATH = os.path.join(PROJECT_PATH, 'static')
+
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    STATIC_PATH,
 )
 
 # List of finder classes that know how to find static files in
@@ -104,6 +116,9 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'tango_with_twitter.urls'
 
+
+TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
+
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'tango_with_twitter.wsgi.application'
 
@@ -111,6 +126,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    TEMPLATE_PATH,
 )
 
 INSTALLED_APPS = (
@@ -121,7 +137,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'deals',
