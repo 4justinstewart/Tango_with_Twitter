@@ -3,16 +3,27 @@
 {% load static %}
 
 <html>
-<head>
-  <title>Tweet and Treat</title>
-  <link rel="stylesheet" type="text/css" href="{% static "css/application.css" %}" />
-</head>
-<body>
-  <h1>Welcome to Tweet and Treat</h1>
-  <h3>Get rewarded for tweeting and being in the right place, at the right time</h3>
-  
-  <p>This app is geared for business owners who want to leverage the power of Twitter while {{ passing_info }} rewarding customers who promote their brand with short-term timed incentives. <a href='/deals/about'>Find out more!</a></p>
+  <head>
+    <title>Tweet and Treat</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/application.css" %}" />
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="form">
+      <h1>Welcome to Tweet and Treat</h1>
+      <h3>Reward people for tweeting and being in the right place, at the right time...</h3>
+    
 
-</body>
+      <form id="company_form" method="post" action="/deals/create_deal">
+
+        {% csrf_token %}
+        {{ form }}
+
+        <input type="submit" name="submit" value="Create Deal!" />
+      </form>
+    </div>
+
+    <p>This app is geared for business owners who want to leverage the power of Twitter while {{ passing_info }} rewarding customers who promote their brand with short-term timed incentives. <a href='/deals/about'>Find out more!</a></p>
+  </body>
 </html>
 
