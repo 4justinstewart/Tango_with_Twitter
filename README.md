@@ -24,9 +24,13 @@ The user can redeem the promo by simply showing up with the tweet, reflecting th
 
 1.) Getting set up with Python and the Django environment on my machine was alone a daunting task.  When I starting coding at DBC in Ruby, one of the instructors held a session to help install software for development.  I literally gave him my computer and he worked his Linux magic.  I had no idea what he was doing at the time.  Now, installing the necessary components to get up and running with a new language and framework on my own was a great way to start the project.
 
+2.) MVT: MVC is not MVT.  In terms of learning, it helps to compare one to another and find their similarities, but I found a great article that talks in depth about why we shouldn't see them as twins. 
+
 ## :( Failures: My Opportunities to Learn
 
-1.) Virtualenv:  Learning Ruby can make you spoiled.  There is really sweet gem called 'bundle' and it basically takes care of any dependency issues you could run into with different plugins.  You can specify which versions of plugins you want to from project to project and it takes care of the rest.  With Python it's a little different.  
+1.) Virtualenv:  Learning Ruby can make you spoiled.  There is really sweet gem called 'bundle' and it basically takes care of any dependency issues you could run into with different plugins.  You can specify which versions of plugins you want to from project to project and it takes care of the rest.  With Python it's a little different.
+
+2.) ModelForms
 
 ## Things to do differently next time....
 
