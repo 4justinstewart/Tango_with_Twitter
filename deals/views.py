@@ -7,7 +7,7 @@ from deals.forms import CompanyForm, DealForm
 def index(request):
   context = RequestContext(request)
 
-  context_dict = { 'passing_info': 'Is this Python interpolation into HTML?', 'form': CompanyForm}
+  context_dict = { 'passing_info': 'Is this Python interpolation into HTML?', 'company_form': CompanyForm, 'deal_form': DealForm}
   
   return render_to_response('deals/index.html', context_dict, context)
 
@@ -18,17 +18,21 @@ def create_deal(request):
     context = RequestContext(request)
 
     if request.method == 'POST':
-        form = CompanyForm(request.POST)
+        company_form = CompanyForm(request.POST)
+        deal_form = DealForm(request.POST)
 
-        if form.is_valid():
-            form.save(commit=True)
-            
+        if company_form.is_valid() and deal_form.is_valid():
+            comp = company_form.save(commit=True)
+            deal = Deal(body=request.POST['body'], company_id=comp.pk)
+            deal.save()
+
             return about(request)
         else:
-            print form.errors
+            print company_form.errors
+            print deal_form.errors
     else:
-        form = CompanyForm()
-
+        company_form = CompanyForm()
+        deal_form = DealForm()
     # return render_to_response(request, 'deals/index.html', {'form': form})
 
 

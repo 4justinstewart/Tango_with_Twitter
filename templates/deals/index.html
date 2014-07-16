@@ -17,7 +17,8 @@
       <form id="company_form" method="post" action="/deals/create_deal">
 
         {% csrf_token %}
-        {{ form }}
+        {{ company_form }}
+        {{ deal_form }}
 
         <input type="submit" name="submit" value="Create Deal!" />
       </form>
