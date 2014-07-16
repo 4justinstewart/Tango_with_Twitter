@@ -28,4 +28,8 @@ The user can redeem the promo by simply showing up with the tweet, reflecting th
 
 1.) Virtualenv:  Learning Ruby can make you spoiled.  There is really sweet gem called 'bundle' and it basically takes care of any dependency issues you could run into with different plugins.  You can specify which versions of plugins you want to from project to project and it takes care of the rest.  With Python it's a little different.  
 
+## Things to do differently next time....
+
+1.) I am doing this project in a text editor.  Its Sublime Text 2, and its what is comfortable with me, but the more and more I read, on the next project I will use an IDE like PyCharm or PyDev.
+
 # Bugs and Issues
