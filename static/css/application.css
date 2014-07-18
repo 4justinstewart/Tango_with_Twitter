@@ -1,0 +1,70 @@
+body {
+  background: url(../images/mosaic.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: Helvetica, sans-serif;
+  letter-spacing: 1px;
+  color: ivory;
+}
+
+.form h1, h3 {
+  font-weight: normal;
+  color: #058bcf;
+  font-family: 'Pacifico', cursive;
+}
+
+.form h1 {
+}
+
+.form {
+  width: 80%;
+  margin: 20px auto;
+  background: url(../images/form_background.png);
+  text-align: center;
+  padding: 50px 0;
+  border-radius: 10px;
+  opacity: 0.2;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all .7s ease;
+}
+
+.form::after {
+
+}
+
+.form:hover {
+  opacity: 0.95;
+}
+
+.form label {
+  display: block;
+  font-size: 16px;
+}
+
+.form input {
+  display: block;
+  width: 70%;
+  height: 60px;
+  text-indent: 5%;
+  margin: 15px auto 30px auto;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 3px solid black;
+}
+
+.form input[type='submit'] {
+  width: 30%;
+  margin-bottom: 0;
+  font-size: 20px;
+  background-color: #058bcf;
+}
+
+.form input[type='submit']:hover {
+  background-color: #36a2d8;
+}
+
