@@ -1,8 +1,9 @@
 from django.http import HttpResponse
 from django.template import RequestContext
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, redirect
 from deals.models import Company, Deal
 from deals.forms import CompanyForm, DealForm
+from deals.twitter import *
 
 def index(request):
   context = RequestContext(request)
@@ -11,8 +12,14 @@ def index(request):
   
   return render_to_response('deals/index.html', context_dict, context)
 
-def about(request):
-  return HttpResponse("Tweet and Treat is an app that allows businesses to promote very temporary deals to active twitter users within a radius of their business. <a href='/deals/'>Back Home</a>")
+def twitter(request):
+    context = RequestContext(request)
+
+    x = OAuth().request_oauthtoken(request)
+
+    context_dict = { 'host' : x }
+
+    return render_to_response('deals/twitter.html', context_dict, context)
 
 def create_deal(request):
     context = RequestContext(request)
@@ -26,12 +33,12 @@ def create_deal(request):
             deal = Deal(body=request.POST['body'], company_id=comp.pk)
             deal.save()
 
-            return about(request)
+            return redirect('deals.views.twitter')
         else:
             print company_form.errors
             print deal_form.errors
     else:
-        company_form = CompanyForm()
+        company_form = CompanyForm() # Need to investigate this further!
         deal_form = DealForm()
     # return render_to_response(request, 'deals/index.html', {'form': form})
 
