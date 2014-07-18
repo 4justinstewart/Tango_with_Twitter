@@ -10,7 +10,7 @@ Previously Worked with: HTML5, CSS3, Databases (SQLite3 for prototyping, PostGRE
 
 ## Minimum Viable Product
 
-A single-page application that takes an address (of the business) and a deal to offer.  
+An application that takes an address (of the business) and a deal to offer.  
 
 Once submitted, a Twitter Streaming API client is activated and filtered to a radius of 1 mile of the business' address.
 
