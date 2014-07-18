@@ -32,6 +32,8 @@ The user can redeem the promo by simply showing up with the tweet, reflecting th
 
 2.) ModelForms
 
+3.) Finding the hostname for URL callback with Twitter API connection:  Huge breakthrough passing the request to the module.
+
 ## Things to do differently next time....
 
 1.) I am doing this project in a text editor.  Its Sublime Text 2, and its what is comfortable with me, but the more and more I read, on the next project I will use an IDE like PyCharm or PyDev.
